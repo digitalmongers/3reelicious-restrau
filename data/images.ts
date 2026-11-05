@@ -7,7 +7,7 @@ export interface ImageAsset {
 
 export const restaurantImages = {
   hero: {
-    src: "/images/sitting3.webp",
+    src: "/images/ambience.webp",
     alt: "3reelicious Restaurant Front Entrance and Grand Ambience",
     title: "Welcome to 3reelicious",
   },

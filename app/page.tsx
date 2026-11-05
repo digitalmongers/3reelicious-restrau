@@ -92,7 +92,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* HERO SECTION */}
-      <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[78svh] sm:min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Cinematic Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -101,15 +101,14 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center scale-105 animate-in fade-in zoom-in-95 duration-1000"
-            loading="eager"
+            className="object-cover object-[72%_center] md:object-center scale-100 sm:scale-105 animate-in fade-in zoom-in-95 duration-1000"
           />
           {/* Multi-stage Vignette & Gradient Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/75 to-[#0F172A]/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/45 to-[#0F172A]/45 sm:from-[#0F172A] sm:via-[#0F172A]/30 sm:to-[#0F172A]/40" />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white pt-24 pb-20">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white pt-16 pb-14 sm:pt-24 sm:pb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#D97706] text-xs font-semibold tracking-wider uppercase mb-6 shadow-sm">
             <Sparkles className="w-4 h-4 text-[#D97706]" />
             <span>Artisan Kitchen & Craft Dining</span>
