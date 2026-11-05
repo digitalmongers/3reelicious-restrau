@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,13 +14,33 @@ import {
 } from "lucide-react";
 import { restaurantImages } from "@/data/images";
 import { restaurantInfo } from "@/data/restaurantInfo";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 
-
-export const metadata = {
-  title: "Our Story & Culinary Philosophy | 3reelicious",
+export const metadata: Metadata = {
+  title: "Our Story & Culinary Philosophy",
   description:
-    "Learn about 3reelicious restaurant, our passion for seasonal farm produce, artisan stone ovens, and the culinary team behind our Civil Lines, Bareilly kitchen.",
+    "Learn about 3reelicious restaurant, our passion for fresh ingredients, signature South Indian & Chinese dishes, stone ovens, and our Civil Lines, Bareilly kitchen.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "/about",
+    siteName: "3reelicious",
+    title: "Our Story & Culinary Philosophy | 3reelicious",
+    description:
+      "Learn about 3reelicious restaurant, our passion for fresh ingredients, signature South Indian & Chinese dishes, stone ovens, and our Civil Lines, Bareilly kitchen.",
+    images: [DEFAULT_OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Story & Culinary Philosophy | 3reelicious",
+    description:
+      "Learn about 3reelicious restaurant, our passion for fresh ingredients, signature South Indian & Chinese dishes, stone ovens, and our Civil Lines, Bareilly kitchen.",
+    images: [DEFAULT_OG_IMAGE.url],
+  },
 };
 
 const coreValues = [

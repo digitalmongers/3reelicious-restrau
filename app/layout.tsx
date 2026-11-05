@@ -1,33 +1,80 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#FDFBF7",
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://3reelicious.in"),
-  title: "3reelicious | Modern Dining & Artisan Flavors",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "3reelicious | Multi-Cuisine Family Restaurant in Civil Lines, Bareilly",
+    template: "%s | 3reelicious",
+  },
   description:
-    "Experience artisanal dining, handcrafted stone-baked pizzas, sizzling clay oven grills, and craft beverages at 3reelicious restaurant.",
+    "Family-friendly pure vegetarian multi-cuisine restaurant in Civil Lines, Bareilly — known for signature South Indian dosas, Chinese favorites, stone-baked pizzas, sizzling tandoor platters, and craft beverages.",
+  applicationName: "3reelicious",
   keywords: [
     "3reelicious",
-    "Restaurant",
-    "Artisan Dining",
-    "Pure Vegetarian",
+    "3Ree licious",
+    "3reelicious Bareilly",
+    "Restaurant in Civil Lines Bareilly",
+    "Pure Vegetarian Restaurant Bareilly",
     "South Indian & Chinese",
+    "Signature Dosa Bareilly",
+    "Family Restaurant Bareilly",
     "Stone Baked Pizza",
+    "Artisan Dining",
   ],
-  authors: [{ name: "3reelicious Culinary Team" }],
+  authors: [{ name: "3reelicious Restaurant" }],
+  creator: "3reelicious",
+  publisher: "3reelicious",
+  category: "Restaurant & Dining",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "3reelicious Restaurant — Modern Flavors, Artisan Soul",
-    description:
-      "A culinary sanctuary celebrating fresh ingredients, wood-fired artisan cooking, and vibrant mocktail mixology.",
-    images: [{ url: "/images/front.webp", width: 1200, height: 630, alt: "3reelicious Restaurant" }],
     type: "website",
+    locale: "en_IN",
+    url: "/",
+    siteName: "3reelicious",
+    title: "3reelicious | Multi-Cuisine Family Restaurant in Civil Lines, Bareilly",
+    description:
+      "Family-friendly multi-cuisine restaurant known for flavorful food, signature dosas, stone-baked pizzas, and warm hospitality in Civil Lines, Bareilly.",
+    images: [DEFAULT_OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "3reelicious | Multi-Cuisine Family Restaurant in Civil Lines, Bareilly",
+    description:
+      "Family-friendly multi-cuisine restaurant known for flavorful food, signature dosas, stone-baked pizzas, and warm hospitality in Civil Lines, Bareilly.",
+    images: [DEFAULT_OG_IMAGE.url],
   },
 };
 
