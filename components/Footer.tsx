@@ -103,12 +103,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/menu" className="hover:text-[#D97706] transition-colors">
-                  Digital Food & Drink Menu
+                  Menu
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="hover:text-[#D97706] transition-colors">
-                  Our Artisan Story & Chef
+                  Our Story
                 </Link>
               </li>
               <li>
